@@ -61,7 +61,7 @@ class Kerros: public Katutaso {
     Asunto as4;
 
     virtual void maaritaAsunnot();
-    double laskeKulutus(double);
+    double laskeKulutus(double k);
  
  Kerros() {
         cout<<"Kerros luotu."<<endl;
@@ -77,9 +77,14 @@ void Kerros::maaritaAsunnot() {
 }
 
 class Kerrostalo {
+    private:
+    Katutaso eka;
+    Kerros toka;
+    Kerros kolmas;
 
+  
     public:
-    double laskeKulutus(double);
+    double laskeKulutus(double k);
     Kerrostalo(){
     cout<<"Kerrostalo luotu."<<endl;
     cout<<"Määritellään koko kerrostalon kaikki asunnot."<<endl;
@@ -87,11 +92,13 @@ class Kerrostalo {
     toka.maaritaAsunnot();
     kolmas.maaritaAsunnot();
     }
-
-    private:
-    Katutaso eka;
-    Kerros toka;
-    Kerros kolmas;
+     double laskeKulutus(double k) {
+        double katutasonKulutus = eka.laskeKulutus(k);
+        double kerrostenKulutus = toka.laskeKulutus(k) + kolmas.laskeKulutus(k);
+        
+        return katutasonKulutus + kerrostenKulutus;
+    }
+   
     
 };
 

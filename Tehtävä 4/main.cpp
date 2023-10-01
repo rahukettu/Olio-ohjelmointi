@@ -14,5 +14,7 @@ int main()
     //testiasunto.laskeKulutus(1);
     //testikatutaso.maaritaAsunnot();   
     //testikerros.maaritaAsunnot(); 
+    cout<<"Kerrostalon kulutus on "<<testikerrostalo.laskeKulutus(1)<<endl;
+
     return 0;
 }

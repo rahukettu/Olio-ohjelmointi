@@ -61,7 +61,7 @@ class Kerros: public Katutaso {
     Asunto* as4;
 
     virtual void maaritaAsunnot();
-    double laskeKulutus(double k);
+    virtual void laskeKulutus(double k);
  
  Kerros() {
         cout<<"Kerros luotu."<<endl;
